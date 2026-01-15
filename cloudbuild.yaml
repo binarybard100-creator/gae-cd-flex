@@ -2,7 +2,17 @@ options:
   logging: CLOUD_LOGGING_ONLY
 
 steps:
+- name: python:3.11-slim
+  entrypoint: bash
+  id: "run-tests"
+  args: -c
+        - |
+        apt update && apt install -y make
+        make install
+        make test
+
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  id: "deploying-flex"
   entrypoint: 'bash'
-  args: ['gcloud app deploy --quiet']
+  args: ['gcloud', 'app', 'deploy', '--quiet']
 #timeout: '1200s'
