@@ -16,5 +16,3 @@ steps:
   id: "deploying-flex"
   entrypoint: 'bash'
   args: ['gcloud', 'app', 'deploy', '--quiet']
-
-# timeout: "1200s"
