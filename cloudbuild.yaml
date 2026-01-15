@@ -1,0 +1,8 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'
+  args: ['gcloud app deploy --quiet']
+timeout: '1200s'
