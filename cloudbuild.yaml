@@ -17,4 +17,4 @@ steps:
   entrypoint: 'bash'
   args: ['gcloud', 'app', 'deploy', '--quiet']
 
-timeout: "1200s"
+# timeout: "1200s"
